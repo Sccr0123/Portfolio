@@ -1,0 +1,46 @@
+User-agent: *
+Disallow: /
+
+User-agent: Googlebot
+Disallow: /
+
+User-agent: Bingbot
+Disallow: /
+
+User-agent: Baiduspider
+Disallow: /
+
+User-agent: Yandex
+Disallow: /
+
+User-agent: DuckDuckBot
+Disallow: /
+
+User-agent: Slurp
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SEMrushBot
+Disallow: /
+
+User-agent: Moz
+Disallow: /
+
+User-agent: Screaming Frog SEO Spider
+Disallow: /
+
+User-agent: OpenAI
+Disallow: /
+
+User-agent: Claude
+Disallow: /
+
+User-agent: Grok
+Disallow: /
+
+User-agent: *
+Disallow: /private/
+Disallow: /temp/
+Disallow: /cgi-bin/
