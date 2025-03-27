@@ -11,9 +11,6 @@ import {
 	useMediaQuery,
 } from '@mui/material';
 
-// project import
-import { APP_DEFAULT_PATH } from 'config';
-
 // assets
 import error500 from 'assets/images/maintenance/Error500.png';
 
@@ -32,7 +29,7 @@ function Error500() {
 				justifyContent='center'
 				sx={{ minHeight: '80vh' }}
 			>
-				<Grid item xs={12}>
+				<Grid size={12}>
 					<Box sx={{ width: { xs: 350, sm: 396 } }}>
 						<img
 							src={error500}
@@ -41,7 +38,7 @@ function Error500() {
 						/>
 					</Box>
 				</Grid>
-				<Grid item xs={12}>
+				<Grid size={12}>
 					<Stack justifyContent='center' alignItems='center'>
 						<Typography align='center' variant={matchDownSM ? 'h2' : 'h1'}>
 							Internal Server Error
@@ -56,7 +53,7 @@ function Error500() {
 						</Typography>
 						<Button
 							component={Link}
-							to={APP_DEFAULT_PATH}
+							to={'/'}
 							variant='contained'
 							sx={{ textTransform: 'none', mt: 4 }}
 						>
