@@ -1,0 +1,9 @@
+{
+	"semi": true,
+	"singleQuote": true,
+	"trailingComma": "all",
+	"eslintIntegration": true,
+	"tabWidth": 2,
+	"useTabs": true,
+	"jsxSingleQuote": true
+}
