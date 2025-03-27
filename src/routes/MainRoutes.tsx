@@ -3,7 +3,7 @@ import { RouteObject } from 'react-router';
 
 import ComingSoon from '../pages/maintenance/coming-soon';
 import Error404 from '../pages/maintenance/404';
-import Error500 from '../pages/maintenance/500';
+// import Error500 from '../pages/maintenance/500';
 
 // ==============================|| MAIN ROUTING ||============================== //
 
