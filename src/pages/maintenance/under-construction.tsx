@@ -40,7 +40,7 @@ function UnderConstruction() {
 						on it right now.
 					</Typography>
 					<Button component={Link} to={'/'} variant='contained'>
-						Back To Home
+						Back To About
 					</Button>
 				</Stack>
 			</Grid>

@@ -8,7 +8,7 @@ import {
 	Typography,
 	useTheme,
 } from '@mui/material';
-import { JSX, useState } from 'react';
+import { JSX, useEffect, useState } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 
 import ProfilePicture from '../assets/images/profile.svg';
@@ -37,6 +37,11 @@ const Index = (): JSX.Element => {
 			width: { xs: '25%', sm: 'auto' },
 		},
 	};
+
+	useEffect(() => {
+		setValue(location);
+	}, [location]);
+
 	return (
 		<Grid
 			container
@@ -65,7 +70,7 @@ const Index = (): JSX.Element => {
 							<Box
 								component={'img'}
 								src={ProfilePicture}
-								marginLeft={{ md: -4, lg: 0 }}
+								marginLeft={{ xs: -3, sm: 0, md: -3, lg: 0 }}
 							/>
 						</Grid>
 
