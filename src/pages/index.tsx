@@ -1,4 +1,13 @@
-import { Box, Button, Card, Grid, Tab, Tabs, Typography } from '@mui/material';
+import {
+	Box,
+	Button,
+	Card,
+	Grid,
+	Tab,
+	Tabs,
+	Typography,
+	useTheme,
+} from '@mui/material';
 import { JSX, useState } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 
@@ -11,10 +20,13 @@ import {
 
 const Index = (): JSX.Element => {
 	const { pathname } = useLocation();
+	const theme = useTheme();
 	const location = pathname.replace('/', '');
 
 	const [value, setValue] = useState<string>(location);
 	const navigate = useNavigate();
+
+	const underXs = theme.breakpoints.down('xs');
 
 	const tabSX = {
 		component: 'a',
@@ -22,6 +34,7 @@ const Index = (): JSX.Element => {
 			borderBottom: 1,
 			borderBottomWidth: 4,
 			marginRight: { xs: 0, sm: 2 },
+			width: { xs: '25%', sm: 'auto' },
 		},
 	};
 	return (
@@ -62,7 +75,7 @@ const Index = (): JSX.Element => {
 							size={{ xs: 12, md: 7.5, lg: 6, xl: 8 }}
 							paddingX={{ xs: 0, sm: 4 }}
 						>
-							<Grid size={{ xs: 12 }} marginLeft={{ xs: -1.5, sm: 0 }}>
+							<Grid size={{ xs: 12 }} marginLeft={{ xs: -0.5, sm: 0 }}>
 								<Tabs
 									value={value}
 									onChange={(e, newValue) => {
@@ -73,7 +86,11 @@ const Index = (): JSX.Element => {
 										}
 									}}
 								>
-									<Tab label={'About Me'} value={''} {...tabSX} />
+									<Tab
+										label={underXs ? 'About' : 'About Me'}
+										value={''}
+										{...tabSX}
+									/>
 
 									<Tab label={'Resume'} value={'resume'} {...tabSX} />
 
