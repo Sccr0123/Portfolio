@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Box, Button, Grid, Stack, Typography } from '@mui/material';
 
 // assets
-import construction from 'assets/images/maintenance/under-construction.svg';
+import construction from '../../assets/images/maintenance/under-construction.svg';
 
 // ==============================|| UNDER CONSTRUCTION - MAIN ||============================== //
 
@@ -18,18 +18,17 @@ function UnderConstruction() {
 			justifyContent='center'
 			sx={{ minHeight: '80vh', py: 2 }}
 		>
-			<Grid size={12}>
-				<Box sx={{ width: { xs: 300, sm: 480 } }}>
-					<img
-						src={construction}
-						alt='under construction'
-						style={{ width: '100%', height: 'auto' }}
-					/>
-				</Box>
+			<Grid container size={12} justifyContent={'center'}>
+				<Box
+					component={'img'}
+					src={construction}
+					alt='under construction'
+					sx={{ width: { xs: 300, sm: 480 } }}
+				/>
 			</Grid>
 			<Grid size={12}>
 				<Stack spacing={2} justifyContent='center' alignItems='center'>
-					<Typography align='center' variant='h1'>
+					<Typography align={'center'} variant={'h2'}>
 						Under Construction
 					</Typography>
 					<Typography
