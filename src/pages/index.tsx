@@ -128,7 +128,7 @@ const Index = (): JSX.Element => {
 							>
 								<Grid container direction={'column'} spacing={0}>
 									<Typography variant={'h3'}>Zachary Thomas</Typography>
-									<Typography variant={'h4'}>Lead Software Engineer</Typography>
+									<Typography variant={'h5'}>Lead Software Engineer</Typography>
 								</Grid>
 
 								<Grid container>
