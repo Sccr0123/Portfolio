@@ -29,12 +29,12 @@ const education: {
 		end: 'December 2028',
 		degrees: [
 			{
-				major: 'Masters of Science, Software Engineering',
+				major: `Master's of Science, Software Engineering`,
 
 				concentration: 'Cloud Computing',
 			},
 			{
-				major: 'Bachelors of Science, Software Engineering',
+				major: `Bachelors' of Science, Software Engineering`,
 				minor: 'General Business',
 				grade: '4.0',
 			},
@@ -49,7 +49,7 @@ const education: {
 		end: 'April 2025',
 		degrees: [
 			{
-				major: 'Associate of Science, Computer Science Transfer',
+				major: `Associate's of Science, Computer Science Transfer`,
 				grade: '2.35',
 			},
 		],
