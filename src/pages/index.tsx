@@ -13,11 +13,6 @@ import { JSX, ReactElement, useEffect, useState } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 
 import ProfilePicture from '../assets/images/profile.svg';
-
-import {
-	Download as DownloadIcon,
-	Portrait as ContactIcon,
-} from '@mui/icons-material';
 import {
 	BiLogoLinkedinSquare as LinkedInIcon,
 	BiLogoGithub as GithubLogo,
@@ -110,13 +105,13 @@ const Index = (): JSX.Element => {
 										}
 									}}
 								>
-									<Tab
+									{/* <Tab
 										label={underXs ? 'About' : 'About Me'}
 										value={''}
 										{...tabSX}
-									/>
+									/> */}
 
-									<Tab label={'Resume'} value={'resume'} {...tabSX} />
+									<Tab label={'Resume'} value={''} {...tabSX} />
 
 									<Tab label={'Projects'} value={'projects'} {...tabSX} />
 
@@ -133,7 +128,7 @@ const Index = (): JSX.Element => {
 							>
 								<Grid container direction={'column'} spacing={0}>
 									<Typography variant={'h3'}>Zachary Thomas</Typography>
-									<Typography variant={'h4'}>Lead Software Engineer</Typography>
+									<Typography variant={'h4'}>Software Engineer</Typography>
 								</Grid>
 
 								<Grid container>

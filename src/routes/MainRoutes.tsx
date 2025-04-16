@@ -17,12 +17,12 @@ const MainRoutes: RouteObject = {
 	errorElement: <Error404 error={'Page'} />,
 	element: <Index />,
 	children: [
+		// {
+		// 	path: '/',
+		// 	element: <About />,
+		// },
 		{
 			path: '/',
-			element: <About />,
-		},
-		{
-			path: 'resume',
 			element: <Resume />,
 		},
 		{
