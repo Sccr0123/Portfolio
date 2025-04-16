@@ -10,10 +10,14 @@ import {
 } from '@mui/material';
 import { JSX } from 'react';
 import Compass from '../../assets/logos/compass.svg';
+import FleetLab from '../../assets/logos/fleetLab.jpeg';
+import Whisker from '../../assets/logos/whisker.png';
+import Costco from '../../assets/logos/costco.jpeg';
 
 const companys: {
 	company: string;
 	image: string;
+	location: string;
 	jobs: {
 		role: string;
 		start: string;
@@ -24,6 +28,7 @@ const companys: {
 	{
 		company: 'Compass Experience Labs',
 		image: Compass,
+		location: 'Remote, Columbus OH',
 		jobs: [
 			{
 				role: 'Application Developer',
@@ -56,7 +61,8 @@ const companys: {
 	},
 	{
 		company: 'Whisker',
-		image: '',
+		image: Whisker,
+		location: 'Auburn Hills, MI',
 		jobs: [
 			{
 				role: 'Technical Product Specialist',
@@ -70,6 +76,32 @@ const companys: {
 				end: 'January 2024',
 				description:
 					'Lead developer for an internal web app that allowed engineering and customer service to troubleshoot user account and robots. Built a centralized authentication system for use across 10 different APIs.',
+			},
+		],
+	},
+	{
+		company: 'Fleet Lab',
+		image: FleetLab,
+		location: 'Remote, Ann Arbor, MI',
+		jobs: [
+			{
+				role: 'Software Engineering Contractor',
+				start: 'April 2023',
+				end: 'September 2023',
+				description: '',
+			},
+		],
+	},
+	{
+		company: 'Costco Wholesale',
+		image: Costco,
+		location: 'Shelby Township, MI',
+		jobs: [
+			{
+				role: 'Cashier / Front End Assistant',
+				start: 'October 2014',
+				end: 'July 2020',
+				description: '',
 			},
 		],
 	},
@@ -89,13 +121,13 @@ const ExperienceCard = (): JSX.Element => {
 					<Grid size={{ xs: 12 }} container direction={'column'} paddingY={2}>
 						<Grid size={{ xs: 12 }} container>
 							{image && (
-								<Grid size={{ xs: 2 }} container>
-									<Box component={'img'} src={image} />
+								<Grid size={{ xs: 0.75 }} container justifyContent={'center'}>
+									<Box component={'img'} src={image} maxHeight={50} />
 								</Grid>
 							)}
 
 							<Grid
-								size={{ xs: image ? 10 : 12 }}
+								size={{ xs: image ? 11.25 : 12 }}
 								container
 								paddingLeft={2}
 								alignItems={'center'}
