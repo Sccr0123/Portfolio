@@ -133,16 +133,51 @@ const Index = (): JSX.Element => {
 							>
 								<Grid container direction={'column'} spacing={0}>
 									<Typography variant={'h3'}>Zachary Thomas</Typography>
-									<Typography variant={'h4'}>Software Engineer</Typography>
+									<Typography variant={'h4'}>Lead Software Engineer</Typography>
 								</Grid>
 
 								<Grid container>
 									<Typography>
-										I am a dedicated software engineer with a background in
-										full-stack web development, graduated from Michigan State
-										University's Bootcamp in July 2022. I create dynamic web
-										applications and continuously seek to learn the latest
-										trends in software engineering.
+										I am a passionate and results-driven Software Engineer with
+										a strong foundation in full-stack development and a proven
+										track record of delivering innovative solutions that enhance
+										user experience and operational efficiency. Currently
+										serving as a Lead Software Engineer at Compass Experience
+										Labs, I specialize in building a scalable, data-driven
+										platform designed to transform customer experience (CX)
+										operations. My technical expertise is supported by hands-on
+										experience in leading end-to-end development of custom
+										tools—from initial concept through deployment—ensuring
+										alignment with business objectives and user needs.
+									</Typography>
+									<Typography>
+										Over the years, I have grown through a variety of technical
+										roles, including my previous positions at Whisker as a
+										Software Engineer and Fleet Lab as a Software Engineering
+										Contractor. In these roles, I spearheaded development
+										initiatives such as centralized authentication systems and
+										internal tools that streamlined engineering and customer
+										service processes across multiple APIs.
+									</Typography>
+									<Typography>
+										My educational journey has been equally focused and
+										ambitious. I am currently pursuing both a Master's of
+										Science and Bachelor of Science in Software Engineering at
+										the University of Michigan–Flint (expected December 2028 and
+										December 2027 repectively). I have also completed a Full
+										Stack Web Development Boot Camp at Michigan State
+										University. I bring a robust technical toolkit that includes
+										JavaScript, TypeScript, React, Node.js, Express.js, Python,
+										C++, MongoDB, SQL, and more. I am highly experienced in AWS,
+										Git, Responsive Design, Software Architecture, and Project
+										Management, with a strong focus on collaboration, customer
+										service, and continuous improvement.
+									</Typography>
+									<Typography>
+										Above all, I am deeply committed to learning, growing, and
+										pushing boundaries in the field of software
+										engineering—driven by curiosity, discipline, and a desire to
+										create meaningful digital experiences.
 									</Typography>
 								</Grid>
 
