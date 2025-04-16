@@ -7,6 +7,7 @@ import Error404 from '../pages/maintenance/404';
 import Index from '../pages';
 import About from '../pages/tabs/about';
 import Resume from '../pages/tabs/resume';
+import Contact from '../pages/tabs/contact';
 // import Error500 from '../pages/maintenance/500';
 
 // ==============================|| MAIN ROUTING ||============================== //
@@ -22,7 +23,7 @@ const MainRoutes: RouteObject = {
 		},
 		{
 			path: 'resume',
-			element: <UnderConstruction />,
+			element: <Resume />,
 		},
 		{
 			path: 'projects',
@@ -30,7 +31,7 @@ const MainRoutes: RouteObject = {
 		},
 		{
 			path: 'contact',
-			element: <UnderConstruction />,
+			element: <Contact />,
 		},
 		{
 			path: '*',

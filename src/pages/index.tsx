@@ -3,12 +3,13 @@ import {
 	Button,
 	Card,
 	Grid,
+	IconButton,
 	Tab,
 	Tabs,
 	Typography,
 	useTheme,
 } from '@mui/material';
-import { JSX, useEffect, useState } from 'react';
+import { JSX, ReactElement, useEffect, useState } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 
 import ProfilePicture from '../assets/images/profile.svg';
@@ -17,6 +18,23 @@ import {
 	Download as DownloadIcon,
 	Portrait as ContactIcon,
 } from '@mui/icons-material';
+import {
+	BiLogoLinkedinSquare as LinkedInIcon,
+	BiLogoGithub as GithubLogo,
+} from 'react-icons/bi';
+
+const socials: { name: string; icon: ReactElement; url: string }[] = [
+	{
+		name: 'LinkedIn',
+		icon: <LinkedInIcon />,
+		url: 'https://www.linkedin.com/in/zacharythomas23/',
+	},
+	{
+		name: 'Gitbub',
+		icon: <GithubLogo />,
+		url: 'https://www.linkedin.com/in/zacharythomas23/',
+	},
+];
 
 const Index = (): JSX.Element => {
 	const { pathname } = useLocation();
@@ -45,6 +63,7 @@ const Index = (): JSX.Element => {
 	return (
 		<Grid
 			container
+			direction={'column'}
 			minHeight={'100vh'}
 			sx={{
 				backgroundColor: 'lightgrey',
@@ -160,7 +179,20 @@ const Index = (): JSX.Element => {
 
 			<Outlet />
 
-			<Grid container flexGrow={1} />
+			<Grid container>
+				{socials.map((item) => (
+					<IconButton
+						key={item.name}
+						size={'large'}
+						sx={{ padding: -1 }}
+						onClick={() => {
+							navigate(item.url);
+						}}
+					>
+						{item.icon}
+					</IconButton>
+				))}
+			</Grid>
 		</Grid>
 	);
 };
