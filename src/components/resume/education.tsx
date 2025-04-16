@@ -2,7 +2,7 @@ import { Box, Card, Grid, Link, Tooltip, Typography } from '@mui/material';
 import { JSX } from 'react';
 import MsuLogo from '../../assets/logos/msu.svg';
 import MacombLogo from '../../assets/logos/macomb.jpeg';
-import UmFlintLogo from '../../assets/logos/umflint.png';
+import UmLogo from '../../assets/logos/um.png';
 import MsuDiploma from '../../assets/diploma/msu.jpg';
 
 const education: {
@@ -21,10 +21,22 @@ const education: {
 		school: 'University Of Michigan-Flint',
 		url: 'https://www.umflint.edu/',
 		location: 'Flint, MI',
-		image: UmFlintLogo,
+		image: UmLogo,
+		start: 'January 2027',
+		end: 'December 2028',
+		major: 'Masters of Science, Software Engineering',
+		diploma: '',
+		minor: '',
+		grade: '',
+	},
+	{
+		school: 'University Of Michigan-Flint',
+		url: 'https://www.umflint.edu/',
+		location: 'Flint, MI',
+		image: UmLogo,
 		start: 'January 2025',
 		end: 'December 2027',
-		major: 'Bachelor of Science, Software Engineering',
+		major: 'Bachelors of Science, Software Engineering',
 		diploma: '',
 		minor: 'General Business',
 		grade: '4.0',
@@ -59,7 +71,7 @@ const education: {
 const EducationCard = (): JSX.Element => {
 	return (
 		<Grid container width={'100%'} marginBottom={2}>
-			<Grid container size={12} paddingX={2}>
+			<Grid container size={12} paddingX={2} justifyContent={'center'}>
 				<Typography variant={'h4'} fontWeight={'bold'}>
 					Education
 				</Typography>
@@ -86,7 +98,12 @@ const EducationCard = (): JSX.Element => {
 								<Grid size={{ xs: 12, md: 5 }} container>
 									{image && (
 										<Grid size={1} container justifyContent={'center'}>
-											<Box component={'img'} src={image} maxHeight={50} />
+											<Box
+												component={'img'}
+												src={image}
+												maxHeight={50}
+												sx={{ aspectRatio: '1/1' }}
+											/>
 										</Grid>
 									)}
 
@@ -99,10 +116,12 @@ const EducationCard = (): JSX.Element => {
 										<Tooltip title={url && 'Click To Navigate'}>
 											{url ? (
 												<Link href={url} underline={'hover'} color={'inherit'}>
-													<Typography variant={'h5'}>{school}</Typography>
+													<Typography variant={'h6'} fontWeight={'bold'}>
+														{school}
+													</Typography>
 												</Link>
 											) : (
-												<Typography variant={'h5'}>{school}</Typography>
+												<Typography variant={'h6'}>{school}</Typography>
 											)}
 										</Tooltip>
 										<Typography>{`${start} - ${end ? end : 'Present'}`}</Typography>
@@ -134,7 +153,7 @@ const EducationCard = (): JSX.Element => {
 												)
 											}
 										>
-											<Typography variant={'h5'}>{major}</Typography>
+											<Typography variant={'h6'}>{major}</Typography>
 										</Tooltip>
 										{minor && <Typography>{`Minor: ${minor}`}</Typography>}
 										{grade && (

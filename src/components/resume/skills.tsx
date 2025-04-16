@@ -29,7 +29,7 @@ const skills: string[] = [
 const SkillsCard = (): JSX.Element => {
 	return (
 		<Grid container width={'100%'}>
-			<Grid container size={12} paddingX={2}>
+			<Grid container size={12} paddingX={2} justifyContent={'center'}>
 				<Typography variant={'h4'} fontWeight={'bold'}>
 					Skills
 				</Typography>

@@ -110,7 +110,7 @@ const companys: {
 const ExperienceCard = (): JSX.Element => {
 	return (
 		<Grid container width={'100%'}>
-			<Grid container size={12} paddingX={2}>
+			<Grid container size={12} paddingX={2} justifyContent={'center'}>
 				<Typography variant={'h4'} fontWeight={'bold'}>
 					Experience
 				</Typography>
@@ -122,7 +122,7 @@ const ExperienceCard = (): JSX.Element => {
 						<Grid size={{ xs: 12 }} container>
 							{image && (
 								<Grid size={{ xs: 0.75 }} container justifyContent={'center'}>
-									<Box component={'img'} src={image} maxHeight={50} />
+									<Box component={'img'} src={image} maxHeight={40} />
 								</Grid>
 							)}
 
@@ -132,7 +132,9 @@ const ExperienceCard = (): JSX.Element => {
 								paddingLeft={2}
 								alignItems={'center'}
 							>
-								<Typography variant={'h4'}>{company}</Typography>
+								<Typography variant={'h5'} fontWeight={'bold'}>
+									{company}
+								</Typography>
 							</Grid>
 						</Grid>
 
@@ -172,7 +174,9 @@ const ExperienceCard = (): JSX.Element => {
 														alignContent={'center'}
 														height={'100%'}
 													>
-														<Typography variant={'h5'}>{role}</Typography>
+														<Typography fontWeight={'bold'} variant={'h6'}>
+															{role}
+														</Typography>
 													</Grid>
 												</Grid>
 											</Grid>
