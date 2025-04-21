@@ -7,6 +7,8 @@ import {
 	StepLabel,
 	Stepper,
 	Typography,
+	useMediaQuery,
+	useTheme,
 } from '@mui/material';
 import { JSX } from 'react';
 import Compass from '../../assets/logos/compass.svg';
@@ -108,11 +110,13 @@ const companys: {
 ];
 
 const ExperienceCard = (): JSX.Element => {
+	const theme = useTheme();
+	const downXs = useMediaQuery(theme.breakpoints.down('sm'));
 	return (
 		<Grid container width={'100%'}>
 			<Grid container size={12} paddingX={2} justifyContent={'center'}>
 				<Typography variant={'h4'} fontWeight={'bold'}>
-					Experience
+					Career
 				</Typography>
 			</Grid>
 
@@ -144,7 +148,7 @@ const ExperienceCard = (): JSX.Element => {
 								sx={{ flexDirection: 'column-reverse', width: '100%' }}
 							>
 								{jobs.map(({ start, end, role, description }) => (
-									<Step key={`${company}: ${role}`} active>
+									<Step key={`${company}: ${role}`} active={!downXs}>
 										<StepLabel sx={{ width: '100%' }}>
 											<Grid container>
 												<Grid size={{ xs: 6, md: 5, xl: 4.5 }} container>

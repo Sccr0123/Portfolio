@@ -25,12 +25,15 @@ const education: {
 		url: 'https://www.umflint.edu/',
 		location: 'Flint, MI',
 		image: UmLogo,
-		start: 'January 2027',
+		start: 'January 2025',
 		end: 'December 2028',
 		degrees: [
+			// {
+			// 	major: `Doctor of Philosophy, Computing`,
+			// 	concentration: 'Software Engineering or AI',
+			// },
 			{
 				major: `Master's of Science, Software Engineering`,
-
 				concentration: 'Cloud Computing',
 			},
 			{
@@ -45,7 +48,7 @@ const education: {
 		url: 'https://www.macomb.edu/',
 		location: 'Warren, MI',
 		image: MacombLogo,
-		start: 'August 2023',
+		start: 'January 2024',
 		end: 'April 2025',
 		degrees: [
 			{

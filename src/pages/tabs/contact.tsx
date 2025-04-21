@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { TextField, Button, Container, Typography, Box } from '@mui/material';
+import { TextField, Button, Typography, Box, Grid, Card } from '@mui/material';
+import DotQr from '../../assets/images/dotProfile.svg';
 import emailjs from '@emailjs/browser';
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
@@ -89,66 +90,98 @@ const Contact = () => {
 	};
 
 	return (
-		<Container maxWidth='sm'>
-			<Box
-				sx={{
-					mt: 4,
-					p: 3,
-					border: '1px solid #ccc',
-					borderRadius: '8px',
-					backgroundColor: 'white',
-				}}
-			>
-				<Typography variant='h5' gutterBottom>
-					Contact Me
-				</Typography>
-				<form onSubmit={handleSubmit}>
-					<TextField
-						fullWidth
-						label='Name'
-						name='name'
-						value={formData.name}
-						onChange={handleChange}
-						error={!!errors.name}
-						helperText={errors.name}
-						margin='normal'
-					/>
-					<TextField
-						fullWidth
-						label='Email'
-						name='email'
-						type='email'
-						value={formData.email}
-						onChange={handleChange}
-						error={!!errors.email}
-						helperText={errors.email}
-						margin='normal'
-					/>
-					<TextField
-						fullWidth
-						label='Message'
-						name='message'
-						multiline
-						rows={4}
-						value={formData.message}
-						onChange={handleChange}
-						error={!!errors.message}
-						helperText={errors.message}
-						margin='normal'
-					/>
-					<Button
-						type='submit'
-						variant='contained'
-						color='primary'
-						disabled={loading}
-						fullWidth
-						sx={{ mt: 2 }}
-					>
-						{loading ? 'Sending' : 'Submit'}
-					</Button>
-				</form>
-			</Box>
-		</Container>
+		<Grid container spacing={2}>
+			<Grid size={{ xs: 12, md: 7 }} container justifyContent={'center'}>
+				<Card sx={{ paddingX: 2, borderRadius: 5, width: '100%' }}>
+					<Grid container direction={'column'} marginY={2}>
+						<Grid size={12} container justifyContent={'center'}>
+							<Typography variant={'h5'} fontWeight={'bold'}>
+								Contact Me
+							</Typography>
+						</Grid>
+
+						<form onSubmit={handleSubmit}>
+							<TextField
+								fullWidth
+								label='Name'
+								name='name'
+								value={formData.name}
+								onChange={handleChange}
+								error={!!errors.name}
+								helperText={errors.name}
+								margin='normal'
+							/>
+							<TextField
+								fullWidth
+								label='Email'
+								name='email'
+								type='email'
+								value={formData.email}
+								onChange={handleChange}
+								error={!!errors.email}
+								helperText={errors.email}
+								margin='normal'
+							/>
+							<TextField
+								fullWidth
+								label='Message'
+								name='message'
+								multiline
+								rows={4}
+								value={formData.message}
+								onChange={handleChange}
+								error={!!errors.message}
+								helperText={errors.message}
+								margin='normal'
+							/>
+							<Button
+								type='submit'
+								variant='contained'
+								color='primary'
+								disabled={loading}
+								fullWidth
+								sx={{ mt: 2 }}
+							>
+								{loading ? 'Sending' : 'Submit'}
+							</Button>
+						</form>
+					</Grid>
+				</Card>
+			</Grid>
+
+			<Grid size={{ xs: 12, md: 5 }} container justifyContent={'center'}>
+				<Card sx={{ paddingX: 2, borderRadius: 5, width: '100%' }}>
+					<Grid container direction={'column'} marginY={2} spacing={2}>
+						<Grid
+							size={12}
+							container
+							justifyContent={'center'}
+							marginBottom={4}
+						>
+							<Typography variant={'h5'} fontWeight={'bold'}>
+								dot.Profile
+							</Typography>
+						</Grid>
+
+						<Grid
+							size={12}
+							container
+							justifyContent={'center'}
+							alignItems={'center'}
+						>
+							<Box
+								component={'img'}
+								src={DotQr}
+								width={250}
+								alt={'dot.Profile QR Code'}
+								sx={{ aspectRatio: 1 / 1 }}
+								alignItems={'center'}
+							/>
+						</Grid>
+					</Grid>
+				</Card>
+			</Grid>
+		</Grid>
 	);
 };
 

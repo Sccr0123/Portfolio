@@ -6,8 +6,9 @@ import UnderConstruction from '../pages/maintenance/under-construction';
 import Error404 from '../pages/maintenance/404';
 import Index from '../pages';
 import About from '../pages/tabs/about';
-import Resume from '../pages/tabs/resume';
+import Experience from '../pages/tabs/experience';
 import Contact from '../pages/tabs/contact';
+import Projects from '../pages/tabs/projects';
 // import Error500 from '../pages/maintenance/500';
 
 // ==============================|| MAIN ROUTING ||============================== //
@@ -17,22 +18,22 @@ const MainRoutes: RouteObject = {
 	errorElement: <Error404 error={'Page'} />,
 	element: <Index />,
 	children: [
-		// {
-		// 	path: '/',
-		// 	element: <About />,
-		// },
 		{
 			path: '/',
-			element: <Resume />,
+			element: <Contact />,
+		},
+		{
+			path: '/experience',
+			element: <Experience />,
 		},
 		{
 			path: 'projects',
-			element: <UnderConstruction />,
+			element: <Projects />,
 		},
-		{
-			path: 'contact',
-			element: <Contact />,
-		},
+		// {
+		// 	path: 'contact',
+		// 	element: <Contact />,
+		// },
 		{
 			path: '*',
 			element: <Error404 error={'Page'} />,

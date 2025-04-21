@@ -11,6 +11,7 @@ import {
 } from '@mui/material';
 import { JSX, ReactElement, useEffect, useState } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
+import { Download as DownloadIcon } from '@mui/icons-material';
 
 import ProfilePicture from '../assets/images/profile.svg';
 import {
@@ -39,7 +40,7 @@ const Index = (): JSX.Element => {
 	const [value, setValue] = useState<string>(location);
 	const navigate = useNavigate();
 
-	const underXs = theme.breakpoints.down('xs');
+	const upSM = theme.breakpoints.up('sm');
 
 	const tabSX = {
 		component: 'a',
@@ -94,16 +95,21 @@ const Index = (): JSX.Element => {
 							size={{ xs: 12, md: 7.5, lg: 6, xl: 8 }}
 							paddingX={{ xs: 0, sm: 4 }}
 						>
-							<Grid size={{ xs: 12 }} marginLeft={{ xs: -0.5, sm: 0 }}>
+							<Grid
+								size={{ xs: 12 }}
+								marginLeft={{ xs: -0.5, sm: 0 }}
+								wrap={'nowrap'}
+							>
 								<Tabs
 									value={value}
 									onChange={(e, newValue) => {
-										if (newValue !== location) {
+										if (newValue !== location && newValue !== 'cv') {
 											setValue(newValue);
 											navigate(newValue);
 											event?.preventDefault();
 										}
 									}}
+									sx={{ width: 'auto' }}
 								>
 									{/* <Tab
 										label={underXs ? 'About' : 'About Me'}
@@ -111,11 +117,26 @@ const Index = (): JSX.Element => {
 										{...tabSX}
 									/> */}
 
-									<Tab label={'Resume'} value={''} {...tabSX} />
+									<Tab label={'Home'} value={''} {...tabSX} />
+
+									<Tab label={'Experience'} value={'experience'} {...tabSX} />
 
 									<Tab label={'Projects'} value={'projects'} {...tabSX} />
 
-									<Tab label={'Contact'} value={'contact'} {...tabSX} />
+									<Tab
+										value={'cv'}
+										label={'Resume'}
+										{...tabSX}
+										onClick={() => {
+											const pdfUrl = 'resume.pdf';
+											const link = document.createElement('a');
+											link.href = pdfUrl;
+											link.download = 'Zachary Thomas Resume.pdf';
+											document.body.appendChild(link);
+											link.click();
+											document.body.removeChild(link);
+										}}
+									/>
 								</Tabs>
 							</Grid>
 							<Grid
@@ -176,20 +197,13 @@ const Index = (): JSX.Element => {
 									</Typography>
 								</Grid>
 
-								{/* <Grid
+								<Grid
 									paddingTop={1}
 									container
 									size={{ xs: 12 }}
 									justifyContent={'space-evenly'}
 								>
-									<Button
-										variant={'contained'}
-										endIcon={<DownloadIcon />}
-										sx={{ padding: 2 }}
-									>
-										Download CV
-									</Button>
-									<Button
+									{/* <Button
 										variant={'contained'}
 										endIcon={<ContactIcon />}
 										sx={{ padding: 2 }}
@@ -199,8 +213,8 @@ const Index = (): JSX.Element => {
 										}}
 									>
 										Contact Me
-									</Button>
-								</Grid> */}
+									</Button> */}
+								</Grid>
 							</Grid>
 						</Grid>
 					</Grid>

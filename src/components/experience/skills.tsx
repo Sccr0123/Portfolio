@@ -7,7 +7,7 @@ const skills: string[] = [
 	'TypeScript',
 	'JavaScript',
 	'React',
-	'Pyton',
+	'Python',
 	'C++',
 	'Node.Js',
 	'Project Management',
