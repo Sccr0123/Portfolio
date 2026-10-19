@@ -1,17 +1,17 @@
 import {
 	Box,
-	Button,
+	//Button,
 	Card,
 	Grid,
 	IconButton,
 	Tab,
 	Tabs,
 	Typography,
-	useTheme,
+	// useTheme,
 } from '@mui/material';
 import { JSX, ReactElement, useEffect, useState } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
-import { Download as DownloadIcon } from '@mui/icons-material';
+// import { Download as DownloadIcon } from '@mui/icons-material';
 
 import ProfilePicture from '../assets/images/profile.svg';
 import {
@@ -19,28 +19,28 @@ import {
 	BiLogoGithub as GithubLogo,
 } from 'react-icons/bi';
 
-const socials: { name: string; icon: ReactElement; url: string }[] = [
+const socials: Array<{ name: string; icon: ReactElement; url: string }> = [
 	{
 		name: 'LinkedIn',
 		icon: <LinkedInIcon />,
 		url: 'https://www.linkedin.com/in/zacharythomas23/',
 	},
 	{
-		name: 'Gitbub',
+		name: 'GitHub',
 		icon: <GithubLogo />,
-		url: 'https://www.linkedin.com/in/zacharythomas23/',
+		url: 'https://github.com/Sccr0123',
 	},
 ];
 
 const Index = (): JSX.Element => {
 	const { pathname } = useLocation();
-	const theme = useTheme();
+	// const theme = useTheme();
 	const location = pathname.replace('/', '');
 
 	const [value, setValue] = useState<string>(location);
 	const navigate = useNavigate();
 
-	const upSM = theme.breakpoints.up('sm');
+	//const upSM = theme.breakpoints.up('sm');
 
 	const tabSX = {
 		component: 'a',
@@ -228,9 +228,9 @@ const Index = (): JSX.Element => {
 					<IconButton
 						key={item.name}
 						size={'large'}
-						sx={{ padding: -1 }}
+						sx={{ padding: 1 }}
 						onClick={() => {
-							navigate(item.url);
+							window.open(item.url, '_blank', 'noopener,noreferrer');
 						}}
 					>
 						{item.icon}
