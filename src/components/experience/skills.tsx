@@ -1,52 +1,69 @@
-import { Box, Card, Grid, minor, Typography } from '@mui/material';
 import { JSX } from 'react';
+import { Card, Grid, Typography, Chip, Box } from '@mui/material';
 
-const skills: string[] = [
-	'Amazon Web Services (AWS)',
-	'Git',
-	'TypeScript',
-	'JavaScript',
-	'React',
-	'Python',
-	'C++',
-	'Node.Js',
-	'Project Management',
-	'Express.JS',
-	'Software Design',
-	'Software Development',
-	'Time Management',
-	'Customer Service',
-	'Multi Tasking',
-	'CSS',
-	'HTML',
-	'Responsive Web Design',
-	'Version Control',
-	'Database Management',
-	'SQL',
-	'MongoDB',
-];
+const skillsData: Record<string, string[]> = {
+	'Technical Leadership': [
+		'Engineering Mentorship',
+		'Agile/Scrum Delivery',
+		'Sprint Planning',
+		'Architecture Governance',
+	],
+	'Full-Stack & Cloud': [
+		'TypeScript',
+		'React / Next.js',
+		'Node.js',
+		'AWS CDK (IaC)',
+		'REST & Microservices',
+	],
+	'Observability & DevOps': [
+		'CI/CD Automation',
+		'Automated Alerting',
+		'Incident Response',
+		'Performance Tuning',
+	],
+	'Emerging Tech': [
+		'AI / Machine Learning',
+		'Intelligent Systems Design',
+		'Natural Language Processing',
+	],
+};
 
 const SkillsCard = (): JSX.Element => {
 	return (
-		<Grid container width={'100%'}>
-			<Grid container size={12} paddingX={2} justifyContent={'center'}>
-				<Typography variant={'h4'} fontWeight={'bold'}>
-					Skills
-				</Typography>
-			</Grid>
+		<Card sx={{ padding: 4, borderRadius: 5, width: '100%' }}>
+			<Grid container direction={'column'} spacing={3}>
+				<Grid container size={12}>
+					<Typography variant='h5' fontWeight='bold'>
+						Skills & Competencies
+					</Typography>
+				</Grid>
 
-			<Card
-				sx={{ paddingX: 2, borderRadius: 5, width: '100%', height: 'auto' }}
-			>
-				<Grid container marginY={2}>
-					{skills.map((item, index) => (
-						<Typography
-							marginRight={index < skills.length - 1 ? 1 : 0}
-						>{`${item}${index < skills.length - 1 ? ',' : ''}`}</Typography>
+				<Grid container spacing={2} size={12}>
+					{Object.entries(skillsData).map(([category, skills]) => (
+						<Grid size={{ xs: 12, md: 6 }} key={category}>
+							<Typography
+								variant='subtitle2'
+								fontWeight='bold'
+								color='primary'
+								marginBottom={1}
+							>
+								{category}
+							</Typography>
+							<Box display='flex' flexWrap='wrap' gap={0.75}>
+								{skills.map((skill) => (
+									<Chip
+										key={skill}
+										label={skill}
+										size='small'
+										variant='outlined'
+									/>
+								))}
+							</Box>
+						</Grid>
 					))}
 				</Grid>
-			</Card>
-		</Grid>
+			</Grid>
+		</Card>
 	);
 };
 

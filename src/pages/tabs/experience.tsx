@@ -2,20 +2,30 @@ import { JSX } from 'react';
 import { Grid } from '@mui/material';
 import EducationCard from '../../components/experience/education';
 import CareerCard from '../../components/experience/career';
-import CertificationsCard from '../../components/experience/certifications';
 import SkillsCard from '../../components/experience/skills';
 
 const Experience = (): JSX.Element => {
 	return (
-		<Grid size={12} container spacing={2}>
-			<Grid size={{ xs: 12, xl: 6 }} container>
-				<CareerCard />
-			</Grid>
-			<Grid size={{ xs: 12, xl: 6 }} container>
-				<Grid size={12} direction={'column'} spacing={2}>
-					<EducationCard />
-					{/* <CertificationsCard /> */}
-					<SkillsCard />
+		<Grid container width={'100%'}>
+			<Grid size={12} container spacing={2}>
+				{/* Left Column */}
+				<Grid size={{ xs: 12, lg: 6 }} container>
+					<CareerCard />
+				</Grid>
+
+				{/* Right Column */}
+				<Grid
+					size={{ xs: 12, lg: 6 }}
+					container
+					direction={'column'}
+					spacing={2}
+				>
+					<Grid size={12} container>
+						<EducationCard />
+					</Grid>
+					<Grid size={12} container>
+						<SkillsCard />
+					</Grid>
 				</Grid>
 			</Grid>
 		</Grid>

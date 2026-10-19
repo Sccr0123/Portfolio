@@ -6,8 +6,7 @@ import {
 	Link,
 	Tooltip,
 	Typography,
-	useMediaQuery,
-	useTheme,
+	//useTheme,
 } from '@mui/material';
 
 import HealthApp from '../../assets/images/projects/healthApp.png';
@@ -23,35 +22,41 @@ const projects: {
 	publicProject: boolean;
 }[] = [
 	{
+		name: 'State Tracking & CSM Platform',
+		image: SherpaCX,
+		languages: ['TypeScript', 'React/Next.js', 'Node.js', 'AWS CDK'],
+		description: `Enterprise Customer Service Management platform built for high-availability support operations, maintaining 99%+ uptime with automated alerting and microservices architecture.`,
+		link: '',
+		publicProject: false,
+	},
+	{
+		name: 'Intelligent Coaching Platform',
+		image: SherpaCX,
+		languages: ['TypeScript', 'React', 'Node.js', 'Python'],
+		description: `Data-driven coaching tool providing personalized real-time performance feedback and analytics for customer experience operations teams.`,
+		link: '',
+		publicProject: false,
+	},
+	{
+		name: 'Whisker Lens / Internal Authentication',
+		image: WhiskerLens,
+		languages: ['TypeScript', 'React', 'Node.js'],
+		description: `Internal troubleshooting platform and centralized authentication system deployed across 10+ internal APIs to streamline hardware diagnostic workflows.`,
+		link: '',
+		publicProject: false,
+	},
+	{
 		name: 'CSC 175 - Health App',
 		image: HealthApp,
 		languages: ['C++'],
-		description:
-			'CSC 175 Final Project. Health App coded in C++ showing fluency in the covered class topics',
+		description: `CSC 175 Final Project demonstrating object-oriented system design and C++ algorithmic concepts.`,
 		link: 'https://github.com/Sccr0123/CSC-175-Final-Project-Health-App',
 		publicProject: true,
-	},
-	{
-		name: 'Whisker Lens',
-		image: WhiskerLens,
-		languages: ['Typescript', 'React'],
-		description: `SaaS tool used internally to monitor the status of customer's robots. It is used by staff from both the engineering and customer experience teams`,
-		link: '',
-		publicProject: false,
-	},
-	{
-		name: 'Sherpa CX',
-		image: SherpaCX,
-		languages: ['Typescript', 'React', 'Python'],
-		description: `SaaS tool used internally to monitor the operations team. It includes custom productivity, coaching, quality assurance, and performance tools as well as an iuntegrated knowledge base`,
-		link: '',
-		publicProject: false,
 	},
 ];
 
 const Projects = (): JSX.Element => {
-	const theme = useTheme();
-	const downXs = useMediaQuery(theme.breakpoints.down('sm'));
+	//const theme = useTheme();
 
 	return (
 		<Grid container width={'100%'}>
@@ -63,18 +68,31 @@ const Projects = (): JSX.Element => {
 				marginBottom={2}
 			>
 				<Typography variant={'h4'} fontWeight={'bold'}>
-					My Work
+					My Work & Projects
 				</Typography>
 			</Grid>
 
 			<Grid size={12} container spacing={2}>
 				{projects.map(
 					({ name, image, languages, description, link, publicProject }) => (
-						<Grid size={{ xs: 12, md: 3 }} container>
-							<Card sx={{ paddingX: 2, borderRadius: 5, width: '100%' }}>
+						<Grid key={name} size={{ xs: 12, md: 6, lg: 3 }} container>
+							<Card
+								sx={{
+									paddingX: 2,
+									borderRadius: 5,
+									width: '100%',
+									display: 'flex',
+									flexDirection: 'column',
+									justifyContent: 'space-between',
+								}}
+							>
 								<Grid container direction={'column'} marginY={2} spacing={2}>
 									<Grid size={12} container justifyContent={'center'}>
-										<Typography variant={'h5'} fontWeight={'bold'}>
+										<Typography
+											variant={'h6'}
+											fontWeight={'bold'}
+											textAlign={'center'}
+										>
 											{name}
 										</Typography>
 									</Grid>
@@ -84,47 +102,45 @@ const Projects = (): JSX.Element => {
 											component={'img'}
 											src={image || name}
 											alt={`${name} Image`}
-											width={'90%'}
-											sx={{ aspectRatio: 1 / 1 }}
+											width={'80%'}
+											sx={{ aspectRatio: 1 / 1, objectFit: 'contain' }}
 										/>
 									</Grid>
 
 									<Grid size={12} container alignItems={'center'}>
-										<Typography variant={'h6'}>Languages: </Typography>
-
-										<Typography>
-											{languages.length > 0
-												? languages.map(
-														(language, index) =>
-															`${language}${index < languages.length - 1 ? ', ' : ''}`,
-													)
-												: 'None Listed'}
+										<Typography variant={'subtitle2'} fontWeight={'bold'}>
+											Stack:&nbsp;
+										</Typography>
+										<Typography variant={'body2'}>
+											{languages.join(', ')}
 										</Typography>
 									</Grid>
 
 									<Grid size={12} container alignItems={'center'}>
-										<Typography variant={'h6'}>Description: </Typography>
-
-										<Typography>{description || 'None Listed'}</Typography>
+										<Typography variant={'body2'} color={'text.secondary'}>
+											{description}
+										</Typography>
 									</Grid>
 
-									<Grid size={12} container justifyContent={'center'}>
+									<Grid size={12} container justifyContent={'center'} mt={1}>
 										{publicProject ? (
 											<Tooltip title={'Click To Navigate'} placement={'top'}>
-												<Link
-													href={link || 'https://zachthomas.dev/projects'}
-													underline={'hover'}
-												>
-													<Typography variant={'h6'}>Learn More</Typography>
+												<Link href={link} target={'_blank'} underline={'hover'}>
+													<Typography variant={'subtitle2'} fontWeight={'bold'}>
+														View Repository
+													</Typography>
 												</Link>
 											</Tooltip>
 										) : (
 											<Tooltip
-												title={'Internal Company Work'}
+												title={'Internal Enterprise Software'}
 												placement={'top'}
 											>
-												<Typography variant={'h6'} color={'textDisabled'}>
-													Learn More
+												<Typography
+													variant={'subtitle2'}
+													color={'textDisabled'}
+												>
+													Enterprise Internal Tool
 												</Typography>
 											</Tooltip>
 										)}

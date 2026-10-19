@@ -1,4 +1,4 @@
-import { Box, Card, Grid, minor, Typography } from '@mui/material';
+import { Box, Card, Grid, Typography } from '@mui/material';
 import { JSX } from 'react';
 import MSU from '../../assets/logos/msu.svg';
 import Macomb from '../../assets/logos/macomb.jpeg';

@@ -1,49 +1,44 @@
 import { Card, Grid, Typography } from '@mui/material';
 import { JSX } from 'react';
 
-const Resume = (): JSX.Element => {
+const About = (): JSX.Element => {
 	return (
 		<Grid container direction={'column'} size={12}>
 			<Grid container size={12} marginBottom={2} paddingX={2}>
-				<Typography variant={'h4'}>About Me</Typography>
+				<Typography variant={'h4'} fontWeight={'bold'}>
+					About Me
+				</Typography>
 			</Grid>
 
 			<Grid container size={12}>
-				<Card sx={{ padding: 4, borderRadius: 2, width: '100%' }}>
+				<Card sx={{ padding: 4, borderRadius: 5, width: '100%' }}>
 					<Grid container direction={'column'} spacing={3}>
-						<Typography>
-							I am a passionate and dedicated software engineer with a robust
-							background in full-stack web development. My journey in technology
-							began with a strong desire to create impactful digital solutions,
-							leading me to graduate from Michigan State University's Full Stack
-							Web Development Bootcamp in July 2022.
+						<Typography variant='body1' sx={{ lineHeight: 1.7 }}>
+							I am a Lead Software Engineer and AI-focused technologist with
+							extensive experience architecting high-availability enterprise
+							platforms and cloud-native microservices. Currently, I lead a
+							cross-functional engineering team at Compass Experience Labs
+							delivering a Customer Service Management (CSM) platform built on
+							React/Next.js, Node.js microservices, and AWS CDK infrastructure
+							maintaining 99%+ system uptime.
 						</Typography>
 
-						<Typography>
-							During my time at the bootcamp, I gained extensive experience in
-							building dynamic and responsive web applications. I honed my
-							skills across various programming languages, frameworks, and
-							libraries, including HTML, CSS, JavaScript, React, Node.js, and
-							more. This comprehensive training equipped me with the ability to
-							develop both front-end and back-end components, ensuring seamless
-							integration and user experience.
+						<Typography variant='body1' sx={{ lineHeight: 1.7 }}>
+							My engineering foundation is complemented by advanced studies
+							toward a Master of Science in Software Engineering with a
+							concentration in Artificial Intelligence from the University of
+							Michigan-Flint (Expected 2028), where I am deepening expertise in
+							machine learning, NLP, and intelligent systems design alongside my
+							Bachelor of Science (3.98 GPA).
 						</Typography>
 
-						<Typography>
-							I thrive in collaborative environments and enjoy working on
-							projects that challenge my creativity and technical skills. My
-							commitment to continuous learning drives me to stay updated with
-							the latest trends and best practices in software engineering. I
-							actively seek out new tools and technologies to enhance my coding
-							abilities and improve project outcomes.
-						</Typography>
-
-						<Typography>
-							In addition to my technical skills, I possess strong
-							problem-solving abilities and a keen attention to detail, which
-							enable me to tackle complex challenges effectively. I am eager to
-							contribute to innovative projects and work alongside like-minded
-							professionals who share my enthusiasm for technology.
+						<Typography variant='body1' sx={{ lineHeight: 1.7 }}>
+							With a proven history of designing data-driven customer experience
+							tools from the ground up, establishing robust CI/CD and
+							observability pipelines, and serving as Chapter President of the
+							National Society of Leadership and Success, I bridge the gap
+							between complex technical architecture, team mentorship, and
+							scalable software execution.
 						</Typography>
 					</Grid>
 				</Card>
@@ -52,4 +47,4 @@ const Resume = (): JSX.Element => {
 	);
 };
 
-export default Resume;
+export default About;
